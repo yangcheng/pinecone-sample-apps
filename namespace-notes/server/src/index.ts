@@ -25,7 +25,9 @@ if (process.env.NODE_ENV === "production") {
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir);
 }
-dotenv.config();
+dotenv.config({
+  override: true,
+});
 
 const app = express();
 const PORT = process.env.PORT || 4001;
